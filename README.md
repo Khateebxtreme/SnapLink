@@ -41,11 +41,13 @@
 
 ### 3) <ins>Sign-Up Page</ins>
 
-![snaplink-url-shortener netlify app_register(iPad Pro)](https://github.com/user-attachments/assets/ec305a1c-6921-42ca-86fd-65effa4031d7)
+![register page](https://github.com/user-attachments/assets/a7ec705f-d9cf-41ac-bb0d-6b8bc8965c6f)
+
 
 ### 4) <ins>Login Page</ins>
 
-![snaplink-url-shortener netlify app_login(iPad Air)](https://github.com/user-attachments/assets/1dc38b26-5196-4dc1-a383-d4e5a7b03b91)
+![login page](https://github.com/user-attachments/assets/db695849-1585-4727-b2ca-4aad26d40cf3)
+
 
 ### 5) <ins>Dashboard Page - Total Clicks Analytics / Short URL Creation button</ins>
 
