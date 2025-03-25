@@ -15,8 +15,8 @@
 
 - Users can input long URLs, and the app generates short, user-friendly links.
 - Users can sign up, log in, and manage their links via a secure account system.
-- Track the number of times the short link is clicked and Monitor how effective the shortened link is by calculating CTR.
-- Users can see a history of all their shortened links on their dashboard page.
+- Track the number of times the short link is clicked and Monitor how effective the shortened link is through analytics charts created using chart.js
+- Users can see all of the shortened links created by them on their dashboard page.
 - Ensures the app works seamlessly across mobile devices and desktops.
 
 
