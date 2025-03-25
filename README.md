@@ -39,6 +39,7 @@
 
 ![snaplink-url-shortener netlify app_about](https://github.com/user-attachments/assets/6b0827d9-8c76-41be-85bc-3ce62df0dfeb)
 
+
 ### 3) <ins>Sign-Up Page</ins>
 
 ![register page](https://github.com/user-attachments/assets/a7ec705f-d9cf-41ac-bb0d-6b8bc8965c6f)
@@ -53,13 +54,17 @@
 
 ![Dashboard Analytics data](https://github.com/user-attachments/assets/46454af2-8060-44d6-929d-cdb452f214f8)
 
+
 ### 6) <ins>Dashboard Page - List of Created URLs (by a user)</ins>
 
 ![Created urls in Dashboard](https://github.com/user-attachments/assets/42338b00-8557-443c-8355-0d03ab1ea1ba)
 
+
 ### 7) <ins>Dashboard Page - Click Analytics Per URL</ins>
 
 ![Per url analytics](https://github.com/user-attachments/assets/60ad4f10-35dd-46a1-86f7-9e62f3770ed9)
+
+
 
 
 
