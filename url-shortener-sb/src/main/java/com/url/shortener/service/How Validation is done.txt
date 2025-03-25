@@ -1,0 +1,80 @@
+Once authenticationManager.authenticate() is called, Spring Security delegates the actual authentication process to the AuthenticationProvider. By default, Spring Security uses DaoAuthenticationProvider for authenticating users with a database (using UserDetailsService to fetch user information).
+
+Here’s what happens in the DaoAuthenticationProvider:
+
+Fetching User Details:
+
+Spring Security will use a UserDetailsService to load the user’s information based on the provided username. This service is typically implemented to query the database and return a UserDetails object.
+
+The UserDetailsService typically uses a JdbcUserDetailsManager or custom implementation to retrieve the user record from the database.
+
+Example UserDetailsService:
+
+java
+Copy
+Edit
+@Service
+public class CustomUserDetailsService implements UserDetailsService {
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        // Query database and return UserDetails (User is usually a custom class implementing UserDetails)
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
+                getAuthorities(user));
+    }
+
+    private Collection<? extends GrantedAuthority> getAuthorities(User user) {
+        // Return user's roles/permissions as authorities
+        return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
+    }
+}
+Password Validation:
+
+After the UserDetails object is retrieved from the database, the DaoAuthenticationProvider compares the password from the UsernamePasswordAuthenticationToken with the password stored in the UserDetails object.
+
+If the passwords match, the user is considered authenticated.
+
+Passwords are generally hashed in the database, so Spring Security uses a password encoder (like BCryptPasswordEncoder) to encode and compare passwords.
+
+Example with password encoding:
+
+java
+Copy
+Edit
+@Configuration
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(customUserDetailsService)
+            .passwordEncoder(new BCryptPasswordEncoder());
+    }
+}
+Authentication Token Creation:
+
+If the credentials are valid (i.e., the password matches), the DaoAuthenticationProvider creates an Authentication object that contains:
+The authenticated UserDetails.
+Granted authorities (e.g., roles assigned to the user).
+This object is returned from the authenticate() method.
+
+If the credentials are invalid, Spring Security throws an AuthenticationException (usually BadCredentialsException).
+4. Return Value
+After successful authentication, authenticationManager.authenticate() returns a fully authenticated Authentication object, which contains:
+
+The authenticated user's details (UserDetails).
+The granted authorities (roles and permissions).
+The credentials (password, which is typically no longer needed).
+The Authentication object can then be used by the Spring Security context, typically via the SecurityContextHolder, to store the authenticated user for further use (such as session management or access control).
+
+Summary Flow
+The UsernamePasswordAuthenticationToken is created with the provided username and password.
+The authenticationManager.authenticate() method delegates the authentication to the DaoAuthenticationProvider.
+The DaoAuthenticationProvider:
+Retrieves the UserDetails (user information) from the database using UserDetailsService.
+Compares the provided password with the stored password (after hashing if needed).
+If successful, it returns a fully authenticated Authentication object with user details and authorities.
+If unsuccessful, it throws an exception (e.g., BadCredentialsException).
+This process ensures that the user is validated against the stored data in the database and that an authentication object is returned for further use in the application.
