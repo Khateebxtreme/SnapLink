@@ -7,8 +7,8 @@
 - [Features](#features)
 - [TechStack](#techstack)
 - [Screens](#screens)
-- [Notes](#notes)
 - [Authors](#authors)
+- [Roadmap](#roadmap)
 
 
 ## Features
@@ -72,7 +72,13 @@
 
 &nbsp;
 
+## Authors
 
+- [@Khateebxtreme](https://github.com/Khateebxtreme)
+
+## Roadmap
+
+- Adding Anon functionalities to short links (only available for a particular session) 
 
 
 
