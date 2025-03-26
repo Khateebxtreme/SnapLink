@@ -78,7 +78,7 @@
 
 ## Roadmap
 
-- Adding Anon functionalities to short links (only available for a particular session) 
+- Adding Anon functionalities to short links (only available for a particular session) next.
 
 
 
