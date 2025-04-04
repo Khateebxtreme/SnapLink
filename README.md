@@ -79,7 +79,7 @@
 ## Roadmap
 
 - Adding Anon functionalities to short links (only available for a particular session) next.
-- Adding Delete functionality for user created URLs -> (will remove the url from the given links, the analytics portion won't be deleted to maintain total click count history)
+- Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history)
 
 
 
