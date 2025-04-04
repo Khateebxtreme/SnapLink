@@ -79,7 +79,7 @@
 ## Roadmap
 
 - Adding Anon functionalities to short links (only available for a particular session) next.
-- Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history)
+- Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history) -> Release Date : 5th or 6th April, 2025
 
 
 
