@@ -78,8 +78,8 @@
 
 ## Roadmap
 
-- Adding Anon functionalities to short links (only available for a particular session) next.
 - Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history) -> <b>Release Date : 16th April, 2025</b>
+- Temporary QR Code Generation for Guest users -> Enables users who are not logged in to create temporary QR codes for URLs, facilitating quick and easy access.
 
 
 
