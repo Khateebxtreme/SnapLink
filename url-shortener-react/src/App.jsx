@@ -1,4 +1,3 @@
-//11 hours 05 mins
 import "./App.css";
 import { BrowserRouter } from "react-router-dom";
 import { getApps } from "./Utils/helper";

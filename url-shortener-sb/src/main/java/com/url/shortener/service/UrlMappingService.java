@@ -9,6 +9,8 @@ import com.url.shortener.repository.ClickEventRepository;
 import com.url.shortener.repository.UrlMappingRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -16,6 +18,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 @Service
@@ -80,9 +83,10 @@ public class UrlMappingService {
         if(urlMapping!=null){
             //we have to now find the url mapping and click dates for the short URL from the provided range of dates. We are actually grouping the data obtained from stream by click date.
             //We are fetching all the events (click events) from the provided URL mapping argument between a provided range, we then convert each click event to a DTO type object and storing the same in a list.
-            return clickEventRepository.findByUrlMappingAndClickDateBetween(
+            Map<LocalDate, Long> mapping = new TreeMap<>(clickEventRepository.findByUrlMappingAndClickDateBetween(
                     urlMapping, start , end
-            ).stream().collect(Collectors.groupingBy(click -> click.getClickDate().toLocalDate(), Collectors.counting())).entrySet().stream()
+            ).stream().collect(Collectors.groupingBy(click -> click.getClickDate().toLocalDate(), Collectors.counting())));
+            return mapping.entrySet().stream()
                     .map(entry -> {
                         ClickEventDTO clickEventDTO = new ClickEventDTO();
                         clickEventDTO.setClickDate(entry.getKey());
@@ -114,5 +118,12 @@ public class UrlMappingService {
         clickEvent.setUrlMapping(urlMapping);
         clickEventRepository.save(clickEvent);
         return urlMapping;
+    }
+
+    public ResponseEntity<String> deleteUrlFunc(String shortUrl){
+        Long shortUrlID = urlMappingRepository.findIdByShortUrl(shortUrl);
+        clickEventRepository.deleteByUrlMappingId(shortUrlID);
+        urlMappingRepository.deleteById(shortUrlID);
+        return new ResponseEntity<>("The following short-Url has been successfully deleted", HttpStatus.OK);
     }
 }

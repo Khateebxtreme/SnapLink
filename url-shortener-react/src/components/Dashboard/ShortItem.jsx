@@ -1,18 +1,24 @@
-import dayjs from 'dayjs';
-import {React, useState, useEffect} from 'react'
-import { Link, useNavigate } from 'react-router-dom';
-import { FaExternalLinkAlt, FaRegCalendarAlt } from 'react-icons/fa';
-import { MdAnalytics, MdOutlineAdsClick } from 'react-icons/md';
-import CopyToClipboard from 'react-copy-to-clipboard';
-import { IoCopy } from 'react-icons/io5';
-import { LiaCheckSolid } from 'react-icons/lia';
-import Graph from './Graph';
-import api from '../../API/api';
-import { ColorRing } from 'react-loader-spinner';
-import { useStoreContext } from '../../contextAPI/ContextAPI';
+import dayjs from "dayjs";
+import { React, useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { FaExternalLinkAlt, FaRegCalendarAlt } from "react-icons/fa";
+import { TbHandClick } from "react-icons/tb"
+import {
+  MdAnalytics,
+  MdOutlineAdsClick,
+  MdDeleteForever,
+} from "react-icons/md";
+import CopyToClipboard from "react-copy-to-clipboard";
+import { IoCopy } from "react-icons/io5";
+import { LiaCheckSolid } from "react-icons/lia";
+import Graph from "./Graph";
+import api from "../../API/api";
+import { ColorRing } from "react-loader-spinner";
+import { useStoreContext } from "../../contextAPI/ContextAPI";
+import toast from 'react-hot-toast';
+import deleteContext from "../../Utils/deleteContext"
 
-const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
-
+const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
   const { token } = useStoreContext();
   const navigate = useNavigate();
   const [isCopied, setIsCopied] = useState(false);
@@ -21,37 +27,66 @@ const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
   const [selectedUrl, setSelectedUrl] = useState("");
   const [analyticsData, setAnalyticsData] = useState([]);
 
+  const { setDeleteLoader } = useContext(deleteContext);
+
   const analyticsHandler = (shortUrl) => {
     if (!analyticToggle) {
-        setSelectedUrl(shortUrl);
+      setSelectedUrl(shortUrl);
     }
     setAnalyticToggle(!analyticToggle);
-  }
+  };
   const fetchMyShortUrl = async () => {
     setLoader(true);
     try {
-         const { data } = await api.get(`/api/urls/analytics/${selectedUrl}?startDate=2025-01-01T00:00:00&endDate=2026-12-31T23:59:59`, {
-                    headers: {
-                      "Content-Type": "application/json",
-                      Accept: "application/json",
-                      Authorization: "Bearer " + token,
-                    },
-                  });
-        setAnalyticsData(data);
-        setSelectedUrl("");
-        console.log(data);
-        
+      const { data } = await api.get(
+        `/api/urls/analytics/${selectedUrl}?startDate=2025-01-01T00:00:00&endDate=2026-12-31T23:59:59`,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+            Authorization: "Bearer " + token,
+          },
+        }
+      );
+      setAnalyticsData(data);
+      setSelectedUrl("");
+      console.log(data);
     } catch (error) {
-        navigate("/error");
-        console.log(error);
+      navigate("/error");
+      console.log(error);
     } finally {
-        setLoader(false);
+      setLoader(false);
     }
-  }
+  };
+
+  const deleteUrlHandler = async () => {
+    setDeleteLoader(true);
+    try {
+      console.log("This is the selected URL -> " + shortUrl);
+      const response = await api.delete(`/api/urls/delete/${shortUrl}`, {
+        headers: {
+          Authorization: "Bearer " + token,
+        },
+      });
+      toast.success("The URL has been successfully deleted", {
+        position: "bottom-center",
+        className: "mb-5",
+        duration: 3000,
+      });
+      console.log(response);
+    } catch (error) {
+      toast.error("Url deletion failed");
+      navigate("/error");
+      console.log(error);
+    } finally {
+      setDeleteLoader(false);
+      window.location.reload()
+    }
+  };
 
   useEffect(() => {
     if (selectedUrl) {
-        fetchMyShortUrl();
+      fetchMyShortUrl();
     }
   }, [selectedUrl]);
 
@@ -63,7 +98,9 @@ const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
             <Link
               target="_"
               className="text-[17px]  font-montserrat font-[600] text-linkColor2"
-              to={import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`}
+              to={
+                import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`
+              }
             >
               {import.meta.env.VITE_REACT_FRONT_END_URL.substring(
                 import.meta.env.VITE_REACT_FRONT_END_URL.indexOf("l")
@@ -74,21 +111,21 @@ const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
             <FaExternalLinkAlt className="text-linkColor" />
           </div>
           <div className="flex items-center gap-1 ">
-            <h3 className=" text-slate-700 font-[400] text-[17px] ">
+            <h3 className=" text-slate-900 font-[400] text-[17px] ">
               {originalUrl}
             </h3>
           </div>
           <div className="flex   items-center gap-8 pt-6 ">
-            <div className="flex gap-1  items-center font-semibold  text-green-800">
+            <div className="flex gap-1  items-center font-semibold  text-green-700">
               <span>
-                <MdOutlineAdsClick className="text-[22px] me-1" />
+                <TbHandClick className="text-[22px] me-1" />
               </span>
               <span className="text-[16px]">{clickCount}</span>
               <span className="text-[15px] ">
                 {clickCount === 0 || clickCount === 1 ? "Click" : "Clicks"}
               </span>
             </div>
-            <div className="flex items-center gap-2 font-semibold text-lg text-slate-800">
+            <div className="flex items-center gap-2 font-semibold text-lg   text-yellow-700">
               <span>
                 <FaRegCalendarAlt />
               </span>
@@ -101,7 +138,9 @@ const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
         <div className="flex  flex-1  sm:justify-end items-center gap-4">
           <CopyToClipboard
             onCopy={() => setIsCopied(true)}
-            text={`${import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`}`}
+            text={`${
+              import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`
+            }`}
           >
             <div className="flex cursor-pointer gap-1 items-center bg-custom-gradient-4 py-2  font-semibold shadow-md shadow-slate-500 px-6 rounded-md text-white ">
               <button className="">{isCopied ? "Copied" : "Copy"}</button>
@@ -118,6 +157,13 @@ const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
           >
             <button>Analytics</button>
             <MdAnalytics className="text-md" />
+          </div>
+          <div
+            onClick={() => deleteUrlHandler(shortUrl)}
+            className="flex cursor-pointer gap-1 items-center bg-delete-button-grad py-2 font-semibold shadow-md shadow-slate-500 pl-2 pr-3 rounded-md text-white"
+          >
+            <button></button>
+            <MdDeleteForever className="text-2xl" />
           </div>
         </div>
       </div>
@@ -164,6 +210,6 @@ const ShortItem = ({originalUrl, shortUrl, clickCount, createdDate}) => {
       </>
     </div>
   );
-}
+};
 
-export default ShortItem
+export default ShortItem;

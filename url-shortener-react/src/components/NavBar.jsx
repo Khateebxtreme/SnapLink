@@ -16,7 +16,7 @@ const NavBar = () => {
     navigate("/register"); //logs out the user and redirects him to register page
   };
   return (
-    <div className="h-12 bg-custom-gradient-3  z-50 flex items-center top-0 sticky">
+    <div className="h-12 bg-custom-gradient-3  z-50 flex items-center top-0">
     <div className="lg:px-14 sm:px-8 px-4 w-full flex justify-between">
       <Link to="/">
         <h1 className="font-bold text-3xl text-white sm:mt-0 mt-2">

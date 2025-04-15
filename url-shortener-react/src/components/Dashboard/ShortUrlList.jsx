@@ -3,7 +3,7 @@ import ShortItem from './ShortItem'
 import { useNavigate } from 'react-router-dom'
 
 const ShortUrlList = ({ data }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div>
       {data ? (
@@ -17,6 +17,6 @@ const ShortUrlList = ({ data }) => {
       )}
     </div>
   );
-}
+};
 
-export default ShortUrlList
+export default ShortUrlList;

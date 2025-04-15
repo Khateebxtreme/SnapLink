@@ -10,6 +10,8 @@ export default {
         "custom-gradient-4" : "linear-gradient(to right, #4A6B00, #4D6F00)",
         "button-gradient-hover": "linear-gradient(to right, #A3E200, #A8E500)",
         "card-gradient": "linear-gradient(to right, #38b2ac, #4299e1)",
+        "delete-button-grad": "linear-gradient(45deg, #ff4c4c, #ff0000)",
+        "calender-color": "linear-gradient(135deg, #ffdb58, #d0a21e)"
       },
       colors: {
         navbarColor: "#ffffff",
