@@ -14,8 +14,7 @@ import java.security.Principal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/urls")
@@ -116,6 +115,14 @@ It helps us get total clicks for all the urls that user owns or has created with
         LocalDate end = LocalDate.parse(endDate, formatter);
 
         Map<LocalDate, Long> totalClicks = urlMappingService.getTotalClicksByUserAndDate(user,start,end);
+        totalClicks = new TreeMap<>(totalClicks);
         return ResponseEntity.ok(totalClicks);
+    }
+
+    //Endpoint to delete a specific URL
+    @DeleteMapping("/delete/{shortUrl}")
+    @PreAuthorize("hasRole('USER')")
+    public ResponseEntity<String> deleteUrlByName(@PathVariable String shortUrl){
+        return urlMappingService.deleteUrlFunc(shortUrl);
     }
 }
