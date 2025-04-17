@@ -16,7 +16,7 @@
 - Users can input long URLs, and the app generates short, user-friendly links.
 - Users can sign up, log in, and manage their links via a secure account system.
 - Track the number of times the short link is clicked and Monitor how effective the shortened link is through analytics charts created using chart.js
-- Users can see all of the shortened links created by them on their dashboard page.
+- Users can see and manage all of the shortened links created by them on their dashboard page.
 - Ensures the app works seamlessly across mobile devices and desktops.
 
 
@@ -62,7 +62,8 @@
 
 ### 6) <ins>Dashboard Page - List of Created URLs (by a user)</ins>
 
-![Created urls in Dashboard](https://github.com/user-attachments/assets/42338b00-8557-443c-8355-0d03ab1ea1ba)
+![list_of_links](https://github.com/user-attachments/assets/bc6460be-e16d-47d1-8c46-0d2a6da79d73)
+
 
 &nbsp;
 
