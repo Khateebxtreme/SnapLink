@@ -38,7 +38,7 @@
 
 ### 2) <ins>About Page</ins>
 
-![snaplink-url-shortener netlify app_about](https://github.com/user-attachments/assets/6b0827d9-8c76-41be-85bc-3ce62df0dfeb)
+![About_Page](https://github.com/user-attachments/assets/b09de2e4-810b-49c9-8020-400de4ae90c7)
 
 &nbsp;
 
