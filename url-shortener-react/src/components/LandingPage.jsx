@@ -22,7 +22,7 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-[calc(100vh-64px)]  lg:px-14 sm:px-8 px-4">
-      <div className="lg:flex-row flex-col    lg:py-5   pt-16   lg:gap-10 gap-8 flex justify-between items-center">
+      <div className="lg:flex-row flex-col  lg:py-5 pt-16  lg:gap-10 gap-8 flex justify-between items-center">
         <div className=" flex-1">
         <h1 className="font-bold font-roboto text-slate-800 md:text-5xl sm:text-4xl text-3xl   md:leading-[55px] sm:leading-[45px] leading-10 lg:w-full md:w-[70%] w-full">SnapLink: Easy URL Shortening, Sharing, and Tracking!</h1>
         <p className="text-slate-700 text-sm my-5">
@@ -36,7 +36,7 @@ const LandingPage = () => {
               Create A Short Link
             </button>
             <button
-              className="bg-custom-gradient-3 hover:bg-button-gradient-hover  w-40 text-white rounded-md  py-2"
+              className="bg-overall-theme-darker-gradient hover:bg-overall-theme-darker-gradient-hover  w-40 text-white rounded-md  py-2"
               onClick={dashBoardNavigateHandler}
             >
               Manage Your Links
@@ -46,7 +46,7 @@ const LandingPage = () => {
         <div className="flex-1 flex justify-center w-full">
           <img
             className="sm:w-[480px] w-[400px] object-cover rounded-md"
-            src="/images/bird.png"
+            src="/images/shortener.jpg"
             alt=""
           />
         </div>

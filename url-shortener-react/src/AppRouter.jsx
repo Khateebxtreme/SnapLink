@@ -11,6 +11,7 @@ import LoginPage from "./components/LoginPage";
 import DashboardLayout from "./components/Dashboard/DashboardLayout";
 import PrivateRoute from './PrivateRoute';
 import ErrorPage from './components/ErrorPage';
+import QRify from './components/QRify';
 
 const AppRouter = () => {
   const hideHeaderFooter = location.pathname.startsWith("/s")
@@ -22,6 +23,7 @@ const AppRouter = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/s/:url" element={<ShortUrlPage />} />
+        <Route path="/qrify" element={<QRify />} />
         <Route path="/register" element={<PrivateRoute publicPage={true}><RegisterPage /></PrivateRoute>} />
         <Route path="/login" element={<PrivateRoute publicPage={true}><LoginPage /></PrivateRoute>} />
 

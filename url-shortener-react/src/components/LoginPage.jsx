@@ -84,7 +84,7 @@ const LoginPage = () => {
       <button
         disabled={loader}
         type='submit'
-        className="bg-customRed font-semibold text-white  bg-custom-gradient-3 w-full py-2 hover:bg-button-gradient-hover transition-colors duration-100 rounded-md my-3"
+        className="bg-customRed font-semibold text-white  bg-overall-theme-gradient w-full py-2 hover:bg-overall-theme-gradient-hover transition-colors duration-100 rounded-md my-3"
       >
         {loader ? "Loading..." : "Login"}
       </button>
@@ -95,7 +95,7 @@ const LoginPage = () => {
           className="font-semibold underline hover:text-black"
           to="/register"
         >
-          <span className="text-btnColor hover:text-cyan-300">Sign Up</span>
+          <span className="text-btnColor hover:text-red-500">Sign Up</span>
         </Link>
       </p>
     </form>

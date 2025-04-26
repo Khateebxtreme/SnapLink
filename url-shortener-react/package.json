@@ -16,6 +16,7 @@
     "axios": "^1.8.3",
     "chart.js": "^4.4.8",
     "dayjs": "^1.11.13",
+    "qrcode": "^1.5.4",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.3.0",
     "react-copy-to-clipboard": "^5.1.0",
