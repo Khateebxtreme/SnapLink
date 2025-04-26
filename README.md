@@ -78,7 +78,7 @@
 ## Roadmap
 
 - Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history) -> <b>Feature is now officially released on codebase. It will be available on the web application soon.</b>
-- Visual Theme update  -> Enhance the user interface with a refined color theme that improves visual hierarchy, accessibility, and modern design consistency across the platform. -> <b>Release Date : 26th April, 2025</b>
+- Visual Theme update  -> Enhance the user interface with a refined color theme that improves visual hierarchy, accessibility, and modern design consistency across the platform. -> <b>Theme Update is now reflected on the codebase. It will be available on web application soon</b>
 - Temporary QR Code Generation for Guest users -> Enables users who are not logged in to create temporary QR codes for URLs, facilitating quick and easy access. -> <b>Release Date : 30th April, 2025</b>
 - Adding URL validation to check (valid, is malicious or not etc) the urls before they are converted to short Urls. -> <b>Release Date : TBD</b>
 
