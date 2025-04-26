@@ -1,24 +1,22 @@
-
 # SnapLink
 
 **SnapLink** is a powerful URL shortener app designed for both personal and professional use. It not only shortens links but also provides detailed usage analytics. Built with security in mind, SnapLink ensures that all shortened links are protected, offering features like password protection and expiration dates to control access.
 
 ## Table of Contents
+
 - [Features](#features)
 - [TechStack](#techstack)
 - [Screens](#screens)
 - [Authors](#authors)
 - [Roadmap](#roadmap)
 
-
 ## Features
 
 - Users can input long URLs, and the app generates short, user-friendly links.
 - Users can sign up, log in, and manage their links via a secure account system.
 - Track the number of times the short link is clicked and Monitor how effective the shortened link is through analytics charts created using chart.js
-- Users can see all of the shortened links created by them on their dashboard page.
+- Users can see and manage all of the shortened links created by them on their dashboard page.
 - Ensures the app works seamlessly across mobile devices and desktops.
-
 
 ## TechStack
 
@@ -38,7 +36,7 @@
 
 ### 2) <ins>About Page</ins>
 
-![snaplink-url-shortener netlify app_about](https://github.com/user-attachments/assets/6b0827d9-8c76-41be-85bc-3ce62df0dfeb)
+![About_Page](https://github.com/user-attachments/assets/b09de2e4-810b-49c9-8020-400de4ae90c7)
 
 &nbsp;
 
@@ -62,7 +60,7 @@
 
 ### 6) <ins>Dashboard Page - List of Created URLs (by a user)</ins>
 
-![Created urls in Dashboard](https://github.com/user-attachments/assets/42338b00-8557-443c-8355-0d03ab1ea1ba)
+![list_of_links](https://github.com/user-attachments/assets/bc6460be-e16d-47d1-8c46-0d2a6da79d73)
 
 &nbsp;
 
@@ -78,9 +76,7 @@
 
 ## Roadmap
 
-- Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history) -> <b>Release Date : 16th April, 2025</b>
-- Temporary QR Code Generation for Guest users -> Enables users who are not logged in to create temporary QR codes for URLs, facilitating quick and easy access. -> <b>Release Date : TBD</b>
-
-
-
-
+- Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history) -> <b>Feature is now officially released on codebase. It will be available on the web application soon.</b>
+- Visual Theme update -> Enhance the user interface with a refined color theme that improves visual hierarchy, accessibility, and modern design consistency across the platform. -> <b>Release Date : 26th April, 2025</b>
+- Temporary QR Code Generation for Guest users -> Enables users who are not logged in to create temporary QR codes for URLs, facilitating quick and easy access. -> <b>Release Date : 30th April, 2025</b>
+- Adding URL validation to check (valid, is malicious or not etc) the urls before they are converted to short Urls. -> <b>Release Date : TBD</b>

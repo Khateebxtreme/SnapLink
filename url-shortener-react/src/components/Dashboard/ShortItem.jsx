@@ -91,13 +91,13 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
   }, [selectedUrl]);
 
   return (
-    <div className="bg-linkBackground shadow-lg border border-solid border-slate-600 px-6 sm:py-1 py-3 rounded-xl transition-all duration-100">
+    <div className="bg-short-list-background shadow-lg border border-solid border-slate-600 px-6 sm:py-1 py-3 rounded-xl transition-all duration-100">
       <div className="flex sm:flex-row flex-col  sm:justify-between w-full sm:gap-0 gap-5 py-5">
         <div className="flex-1 sm:space-y-1 max-w-full overflow-x-auto overflow-y-hidden ">
           <div className="text-slate-900 pb-1 sm:pb-0  flex items-center gap-2 ">
             <Link
               target="_"
-              className="text-[17px]  font-montserrat font-[600] text-linkColor2"
+              className="text-[17px]  font-montserrat font-[600] text-red-400"
               to={
                 import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`
               }
@@ -116,7 +116,7 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
             </h3>
           </div>
           <div className="flex   items-center gap-8 pt-6 ">
-            <div className="flex gap-1  items-center font-semibold  text-green-700">
+            <div className="flex gap-1  items-center font-semibold  text-[#10b981]">
               <span>
                 <TbHandClick className="text-[22px] me-1" />
               </span>
@@ -125,7 +125,7 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
                 {clickCount === 0 || clickCount === 1 ? "Click" : "Clicks"}
               </span>
             </div>
-            <div className="flex items-center gap-2 font-semibold text-lg   text-yellow-700">
+            <div className="flex items-center gap-2 font-semibold text-lg   text-[#475569]">
               <span>
                 <FaRegCalendarAlt />
               </span>
@@ -142,7 +142,7 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
               import.meta.env.VITE_REACT_FRONT_END_URL + "/s/" + `${shortUrl}`
             }`}
           >
-            <div className="flex cursor-pointer gap-1 items-center bg-custom-gradient-4 py-2  font-semibold shadow-md shadow-slate-500 px-6 rounded-md text-white ">
+            <div className="flex cursor-pointer gap-1 items-center bg-copy-button-color py-2  font-semibold shadow-md shadow-slate-500 px-6 rounded-md text-white ">
               <button className="">{isCopied ? "Copied" : "Copy"}</button>
               {isCopied ? (
                 <LiaCheckSolid className="text-md" />
@@ -153,7 +153,7 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
           </CopyToClipboard>
           <div
             onClick={() => analyticsHandler(shortUrl)}
-            className="flex cursor-pointer gap-1 items-center bg-card-gradient py-2 font-semibold shadow-md shadow-slate-500 px-6 rounded-md text-white "
+            className="flex cursor-pointer gap-1 items-center bg-analytics-button-gradient py-2 font-semibold shadow-md shadow-slate-500 px-6 rounded-md text-white "
           >
             <button>Analytics</button>
             <MdAnalytics className="text-md" />

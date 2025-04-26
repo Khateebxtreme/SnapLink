@@ -16,8 +16,8 @@ const NavBar = () => {
     navigate("/register"); //logs out the user and redirects him to register page
   };
   return (
-    <div className="h-12 bg-custom-gradient-3  z-50 flex items-center top-0">
-    <div className="lg:px-14 sm:px-8 px-4 w-full flex justify-between">
+    <div className="h-14 bg-overall-theme-gradient  z-50 flex items-center top-0">
+    <div className="lg:px-9 sm:px-2 px-3 w-full flex justify-between">
       <Link to="/">
         <h1 className="font-bold text-3xl text-white sm:mt-0 mt-2">
           SnapLink
@@ -26,7 +26,7 @@ const NavBar = () => {
       <ul
         className={`flex sm:gap-10 gap-4 sm:items-center sm:mt-1 sm:pt-0 pt-3 text-slate-800 sm:static absolute left-0 top-[48px] sm:shadow-none shadow-md ${
           navbarOpen ? "h-fit sm:pb-0 pb-5" : "h-0 overflow-hidden"
-        }  transition-all duration-100 sm:h-fit sm:bg-none  bg-custom-gradient-3 sm:w-fit w-full sm:flex-row flex-col px-3 sm:px-0`}
+        }  transition-all duration-100 sm:h-fit sm:bg-none  bg-overall-theme-gradient sm:w-fit w-full sm:flex-row flex-col px-3 sm:px-0`}
       >
         <li className="hover:text-btnColor font-[500]  transition-all duration-150">
           <Link
@@ -48,6 +48,16 @@ const NavBar = () => {
             About
           </Link>
         </li>
+        <li className="hover:text-btnColor font-[500]  transition-all duration-150">
+          <Link
+            className={`${
+              path === "/qrify" ? "text-white font-semibold" : "text-gray-200"
+            }`}
+            to="/qrify"
+          >
+            QRify
+          </Link>
+        </li>
         { token && (
           <li className="hover:text-btnColor font-[500]  transition-all duration-150">
           <Link
@@ -62,13 +72,13 @@ const NavBar = () => {
         )}
         {!token && (
           <Link to="/register">
-            <li className=" sm:ml-0 -ml-1 bg-custom-gradient-4 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-1 rounded-md  hover:bg-button-gradient-hover transition-all duration-150">
+            <li className=" sm:ml-0 -ml-1 bg-overall-theme-darker-gradient text-white  cursor-pointer w-24 text-center font-semibold px-2 py-1 rounded-md  hover:bg-overall-theme-darker-gradient-hover transition-all duration-150">
               SignUp
             </li>
           </Link>
         )}
         {token && (
-          <button onClick={onLogOutHandler} className=" sm:ml-0 -ml-1 bg-custom-gradient-4 text-white  cursor-pointer w-24 text-center font-semibold px-2 py-1 rounded-md  hover:bg-button-gradient-hover transition-all duration-150">
+          <button onClick={onLogOutHandler} className=" sm:ml-0 -ml-1 bg-overall-theme-darker-gradient text-white  cursor-pointer w-24 text-center font-semibold px-2 py-1 rounded-md  hover:bg-overall-theme-darker-gradient-hover transition-all duration-150">
             Logout
           </button>
         )}

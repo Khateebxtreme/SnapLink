@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <CurrentApp />
+        <CurrentApp className="bg-[#f1f5f9]"/>
       </BrowserRouter>
     </>
   );

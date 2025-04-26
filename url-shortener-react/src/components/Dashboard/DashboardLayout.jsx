@@ -62,7 +62,7 @@ const DashboardLayout = () => {
           </div>
           <div className="py-3 sm:text-end text-center">
             <button
-              className="bg-custom-gradient-3  hover:bg-button-gradient-hover px-3 py-2 rounded-lg text-white"
+              className="bg-overall-theme-gradient  hover:bg-overall-theme-gradient-hover px-3 py-2 rounded-lg text-white"
               onClick={() => setShortenPopUp(true)}
             >
               Create A New Short Url

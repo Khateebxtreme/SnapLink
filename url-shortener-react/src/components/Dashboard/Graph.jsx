@@ -40,9 +40,9 @@ const Graph = ({ graphData }) => {
             ? userPerData
             : [],
         backgroundColor:
-          graphData.length > 0 ? "#FFDB58" : "rgba(54, 162, 235, 0.1)",
-        pointBorderColor: "darkgreen",
-        borderColor: graphData.length > 0 ? "#BFA442" : "rgba(54, 162, 235, 0.1)",
+          graphData.length > 0 ? "#fcd34d" : "rgba(54, 162, 235, 0.1)",
+        pointBorderColor: "#f43f5e",
+        borderColor: graphData.length > 0 ? "#f59e0b" : "rgba(54, 162, 235, 0.1)",
         fill: true,
         tension: 0.4,
       },
