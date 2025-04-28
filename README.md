@@ -70,6 +70,7 @@
 
 &nbsp;
 
+
 ## Authors
 
 - [@Khateebxtreme](https://github.com/Khateebxtreme)
@@ -80,3 +81,4 @@
 - Visual Theme update -> Enhance the user interface with a refined color theme that improves visual hierarchy, accessibility, and modern design consistency across the platform. -> <b>Theme Update is now reflected on the codebase. It will be available on web application soon</b>
 - Temporary QR Code Generation for Guest users -> Enables users who are not logged in to create temporary QR codes for URLs, facilitating quick and easy access. -> <b>Release Date : 29th April, 2025</b>
 - Adding URL validation to check (valid, is malicious or not etc) the urls before they are converted to short Urls. -> <b>Release Date : TBD</b>
+
