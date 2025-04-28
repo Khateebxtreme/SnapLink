@@ -53,10 +53,10 @@ const LoginPage = () => {
       onSubmit={handleSubmit(loginHandler)}
       className="sm:w-[450px] w-[360px]  shadow-custom py-8 sm:px-8 px-4 rounded-md border-black border"
     >
-      <h1 className="text-center font-serif text-btnColor font-bold lg:text-3xl text-2xl">
-        Login Here
+      <h1 className="text-center font-serif text-btnColor font-semibold lg:text-2xl text-xl">
+        Sign In to Continue
       </h1>
-      <hr className="mt-2 mb-5 text-black border-black border" />
+      <hr className="mt-2 mb-5 border-black border" />
       <div className="flex flex-col gap-3">
         <TextField
           label="UserName"
