@@ -38,7 +38,7 @@ const NavBar = () => {
             Home
           </Link>
         </li>
-        <li className="hover:text-btnColor font-[500]  transition-all duration-150">
+        {/*<li className="hover:text-btnColor font-[500]  transition-all duration-150">
           <Link
             className={`${
               path === "/about" ? "text-white font-semibold" : "text-gray-200"
@@ -47,7 +47,7 @@ const NavBar = () => {
           >
             About
           </Link>
-        </li>
+        </li>*/}
         <li className="hover:text-btnColor font-[500]  transition-all duration-150">
           <Link
             className={`${

@@ -10,7 +10,8 @@ const QRify = () => {
 
   const generateQrCode = async ()=>{
     await QRCode.toDataURL(longUrl,{
-      width:200,
+      width:100,
+      size: 128,
       margin:2,
       color:{
         dark : "#ffffff",
@@ -45,27 +46,27 @@ const QRify = () => {
   }
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex justify-center items-center sm:my-8">
-      <div className="sm:w-[500px] w-[360px]  shadow-custom sm:py-4 py-8 sm:px-8 px-4 rounded-md border-black border">
-        <h1 className="text-center font-serif text-btnColor font-semibold lg:text-2xl text-xl">
+    <div className="min-h-[calc(100vh-64px)] flex justify-center items-center sm:mt-4">
+      <div className="sm:w-[500px] w-[360px] pt-5 pb-4 sm:px-8 px-4 rounded-lg">
+        <h1 className="text-center font-serif text-btnColor font-semibold lg:text-3xl text-2xl">
           QR Code Generator
         </h1>
-        <div className="relative w-full max-w-md mt-6">
+        <div className="relative w-full mt-3">
           <input
             type="text"
             onChange={()=>setLongUrl(event.target.value)}
             placeholder="Please Enter a Long URL"
-            className="w-full border-2 border-gray-300 rounded-md bg-white px-4 py-1 text-md text-gray-900 transition focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:placeholder-transparent"
+            className="w-full border-2 border-gray-300 rounded-md bg-white px-3 py-1 text-md text-gray-900 transition focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:placeholder-transparent"
           />
         </div>
-        <hr className="mt-2 mb-5" />
+        <hr className="mt-2 mb-3 border" />
         <div className="flex items-center justify-center">
-          <img src={imageUrl} width="300" height="200"/>
+          <img src={imageUrl} width="300" height="270" className="w-5/6 h-full"/>
         </div>
         <button
           disabled={loader}
           onClick={handleQR}
-          className="bg-customRed font-semibold text-white  bg-overall-theme-gradient w-full py-2 hover:bg-overall-theme-gradient-hover transition-colors duration-100 rounded-md my-3"
+          className="bg-customRed font-semibold text-white  bg-overall-theme-gradient w-full py-2 hover:bg-overall-theme-gradient-hover transition-colors duration-100 rounded-md mt-4"
         >
           {loader ? "Loading..." : "Generate QR"}
         </button>
