@@ -5,7 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="bg-overall-theme-gradient text-white py-2 mt-2 z-40 relative">
-    <div className="container mx-auto px-6 lg:px-7 flex flex-col lg:flex-row lg:justify-between items-center gap-5">
+    <div className="container mx-auto px-2 lg:px-3 flex flex-col lg:flex-row lg:justify-between items-center gap-5">
       <div className="text-center lg:text-left">
         <h2 className="text-2xl font-bold mb-2 justify-center">SnapLink</h2>
       </div>
