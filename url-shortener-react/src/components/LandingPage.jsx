@@ -24,8 +24,8 @@ const LandingPage = () => {
     <div className="min-h-[calc(100vh-64px)]  lg:px-14 sm:px-8 px-4">
       <div className="lg:flex-row flex-col  lg:py-5 pt-16  lg:gap-10 gap-8 flex justify-between items-center">
         <div className=" flex-1">
-        <h1 className="font-bold font-roboto text-slate-800 md:text-5xl sm:text-4xl text-3xl   md:leading-[55px] sm:leading-[45px] leading-10 lg:w-full md:w-[70%] w-full">SnapLink: Easy URL Shortening, Sharing, and Tracking!</h1>
-        <p className="text-slate-700 text-sm my-5">
+        <h1 className="font-bold font-roboto text-slate-800 2xl:text-6xl md:text-5xl sm:text-4xl text-3xl   md:leading-[55px] sm:leading-[45px] leading-10 lg:w-full md:w-[70%] w-full">SnapLink: Easy URL Shortening, Sharing, and Tracking!</h1>
+        <p className="text-slate-700 text-sm my-5 2xl:text-lg">
         SnapLink simplifies URL shortening, making link sharing quick and easy. Its intuitive interface lets you create short, shareable URLs in just a few seconds. Enhance your sharing experience with SnapLink now.
         </p>
         <div className="flex items-center gap-3">
@@ -45,7 +45,7 @@ const LandingPage = () => {
         </div>
         <div className="flex-1 flex justify-center w-full">
           <img
-            className="sm:w-[480px] w-[400px] object-cover rounded-md"
+            className="2xl:w-[580px] sm:w-[480px] w-[400px] object-cover rounded-md"
             src="/images/shortener.jpg"
             alt=""
           />
@@ -53,11 +53,11 @@ const LandingPage = () => {
       </div>
       <div className="sm:pt-12 pt-7">
         <p
-          className="text-slate-800 font-roboto font-bold lg:w-[60%]  md:w-[70%] sm:w-[80%] mx-auto text-3xl text-center"
+          className="text-slate-800 font-roboto font-bold lg:w-[60%]  md:w-[70%] sm:w-[80%] mx-auto text-3xl 2xl:text-4xl text-center"
         >
           Chosen by leading professionals and organizations worldwide.
         </p>
-        <div className="pt-4 pb-7 grid lg:gap-7 gap-4 xl:grid-cols-3  lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-4">
+        <div className="pt-3 pb-6 grid lg:gap-7 gap-4 xl:grid-cols-3  lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 mt-4">
           {/* Card components goes here */}
           <Card
             title="Effortless Link Shortening"

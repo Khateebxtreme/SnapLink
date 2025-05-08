@@ -47,7 +47,7 @@ const QRify = () => {
 
   return (
     <div className="min-h-[calc(100vh-64px)] flex justify-center items-center sm:mt-4">
-      <div className="sm:w-[500px] w-[360px] pt-5 pb-4 sm:px-8 px-4 rounded-lg">
+      <div className="2xl:w-[40%] sm:w-[500px] w-[360px] pt-5 pb-4 sm:px-8 px-4 rounded-lg">
         <h1 className="text-center font-serif text-btnColor font-semibold lg:text-3xl text-2xl">
           QR Code Generator
         </h1>

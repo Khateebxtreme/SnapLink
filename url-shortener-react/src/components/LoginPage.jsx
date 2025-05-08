@@ -51,7 +51,7 @@ const LoginPage = () => {
     <div className="min-h-[calc(100vh-64px)] flex justify-center items-center">
     <form
       onSubmit={handleSubmit(loginHandler)}
-      className="sm:w-[450px] w-[360px]  shadow-custom py-8 sm:px-8 px-4 rounded-md border-black border"
+      className="2xl:w-[700px] 2xl:h-[400px] sm:w-[450px] w-[360px]  shadow-custom py-8 sm:px-8 px-4 rounded-md border-black border"
     >
       <h1 className="text-center font-serif text-btnColor font-semibold lg:text-2xl text-xl">
         Sign In to Continue

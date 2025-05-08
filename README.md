@@ -12,11 +12,17 @@
 
 ## Features
 
-- Users can input long URLs, and the app generates short, user-friendly links.
-- Users can sign up, log in, and manage their links via a secure account system.
-- Track the number of times the short link is clicked and Monitor how effective the shortened link is through analytics charts created using chart.js
-- Users can see and manage all of the shortened links created by them on their dashboard page.
-- Ensures the app works seamlessly across mobile devices and desktops.
+- Developed SnapLink, a full-stack URL shortener web app using React.js, Spring Boot, and MySQL, with a
+  focus on scalability and mobile-first responsive design.
+- Implemented secure JWT-based authentication with Spring Security, enabling safe user registration, login, and
+  link management.
+- Integrated real-time link analytics using Chart.js, offering users insights into total clicks and link performance
+  via interactive dashboards.
+- Deployed the application using Netlify (frontend), Render (backend), Neon database, and Docker for backend
+  containerization, ensuring efficient cloud hosting and CI/CD workflows.
+- Built a QR code generation feature on the React frontend, allowing users to easily create, preview, and share
+  QR codes for their Long URLs.
+- Enhanced user experience with responsive UI components built using Material-UI and Tailwind CSS, ensuring mobile and desktop compatibility.
 
 ## TechStack
 
@@ -34,21 +40,21 @@
 
 &nbsp;
 
-### 2) <ins>About Page</ins>
+### 2) <ins>QRify Page</ins>
 
-![About_page](https://github.com/user-attachments/assets/7a53f5bf-1233-4484-891c-c2a065ecc2d4)
+![Qrify](https://github.com/user-attachments/assets/550aa1c2-a600-4d80-b008-9f26da563cd4)
 
 &nbsp;
 
 ### 3) <ins>Sign-Up Page</ins>
 
-![Register_Page](https://github.com/user-attachments/assets/7ed33d5a-396e-48af-921f-c60c11f0cae9)
+![Register_page](https://github.com/user-attachments/assets/d8f8b34d-00be-4b42-91b2-c61ad7513ae2)
 
 &nbsp;
 
 ### 4) <ins>Login Page</ins>
 
-![Login_Page](https://github.com/user-attachments/assets/ab9fbef0-5ce0-4fd3-9ba0-ef90c424d765)
+![Sign_in](https://github.com/user-attachments/assets/ba407cae-dcce-4d5a-a69c-9fe4a913210f)
 
 &nbsp;
 
@@ -76,7 +82,56 @@
 
 ## Roadmap
 
-- Adding Delete functionality for user created URLs -> (will remove the url from the given link list, will also remove anything from the database concerning this URL including analytics and mapping history) -> <b>Feature is now officially released on codebase. It will be available on the web application soon.</b>
-- Visual Theme update -> Enhance the user interface with a refined color theme that improves visual hierarchy, accessibility, and modern design consistency across the platform. -> <b>Theme Update is now reflected on the codebase. It will be available on web application soon</b>
-- Temporary QR Code Generation for Guest users -> Enables users who are not logged in to create temporary QR codes for URLs, facilitating quick and easy access. -> <b>Release Date : 29th April, 2025</b>
-- Adding URL validation to check (valid, is malicious or not etc) the urls before they are converted to short Urls. -> <b>Release Date : TBD</b>
+1.  🗑️ Delete Functionality for User-Created URLs
+    We have implemented the ability for users to delete their own shortened URLs. This feature :
+
+         - Removes the selected URL from the user’s link list.
+         - Deletes all associated data from the database, including analytics and redirection history.
+         - Ensures full cleanup of records to maintain data integrity and privacy.
+
+    ✅ This feature is now officially released in the codebase and will be available on the web application soon.
+
+&nbsp;
+
+2.  🎨 Visual Theme Update
+    The platform has received a major UI enhancement with a new visual theme that:
+
+         - Improves color contrast and readability for better accessibility.
+         - Refines visual hierarchy to make navigation and usage more intuitive.
+         - Aligns the interface with modern design standards for a cleaner, more professional look.
+
+    ✅ The updated theme is now live on the website.
+
+&nbsp;
+
+3.  📱 Temporary QR Code Generation for Guest Users
+    Guest users can now generate temporary QR codes for any URL, enabling quick and convenient sharing or access without needing to log in. This feature is designed to enhance usability for casual visitors and one-time users by:
+
+         - Allowing QR generation directly from the homepage or extension.
+         - Creating non-persistent codes that are not stored in the user database.
+         - Ensuring fast, frictionless access for immediate use cases.
+
+    ✅ This feature is now live as part of the V1.0.2 update.
+
+&nbsp;
+
+4.  🔗 Chrome Extension ->
+    We are developing a lightweight Google Chrome extension to integrate the core features of the URL shortener directly into the browser. Planned capabilities include:
+
+         - A popup interface for quickly shortening the current tab's URL.
+         - One-click copy and open options for shortened links.
+
+    ✅ URL Validity Checking->
+    To improve reliability and user experience, we will implement automatic URL validation before shortening:
+
+         - Checks for malformed or unreachable URLs.
+         - HTTP status verification to ensure links are active and responsive.
+
+    🔒 Malicious Link Detection (Planned)
+    To enhance safety, we will integrate link scanning using threat detection services such as Google Safe Browsing or VirusTotal:
+
+         - Automatic scanning of URLs to detect phishing, malware, or other malicious content.
+         - Warnings or alerts when suspicious links are detected.
+         - Optionally block or flag high-risk links before shortening.
+
+    These features are currently under development and will be rolled out in stages. We welcome feedback and contributions from the community as we continue to build a safer and more convenient link management tool. Planned Release Date for an upcoming feature -> <b>Release Date : 30th May, 2025</b>

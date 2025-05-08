@@ -45,7 +45,7 @@ const registerHandler = async (data) => {
     <div className="min-h-[calc(100vh-64px)] flex justify-center items-center">
       <form
         onSubmit={handleSubmit(registerHandler)}
-        className="sm:w-[450px] w-[360px]  shadow-custom py-8 sm:px-8 px-4 rounded-md border-black border"
+        className="2xl:w-[700px] 2xl:h-[450px] sm:w-[450px] w-[360px]  shadow-custom py-8 sm:px-8 px-4 rounded-md border-black border"
       >
         <h1 className="text-center font-serif text-btnColor font-semibold lg:text-2xl text-xl">
           Create a New Account
