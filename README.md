@@ -82,7 +82,7 @@
 
 ## Roadmap
 
-1.  🗑️ Delete Functionality for User-Created URLs
+1.  🗑️ Delete Functionality for User-Created URLs. ->
     We have implemented the ability for users to delete their own shortened URLs. This feature :
 
          - Removes the selected URL from the user’s link list.
@@ -93,7 +93,7 @@
 
 &nbsp;
 
-2.  🎨 Visual Theme Update
+2.  🎨 Visual Theme Update -> 
     The platform has received a major UI enhancement with a new visual theme that:
 
          - Improves color contrast and readability for better accessibility.
@@ -104,7 +104,7 @@
 
 &nbsp;
 
-3.  📱 Temporary QR Code Generation for Guest Users
+3.  📱 Temporary QR Code Generation for Guest Users -> 
     Guest users can now generate temporary QR codes for any URL, enabling quick and convenient sharing or access without needing to log in. This feature is designed to enhance usability for casual visitors and one-time users by:
 
          - Allowing QR generation directly from the homepage or extension.
@@ -127,7 +127,7 @@
          - Checks for malformed or unreachable URLs.
          - HTTP status verification to ensure links are active and responsive.
 
-    🔒 Malicious Link Detection (Planned)
+    🔒 Malicious Link Detection -> 
     To enhance safety, we will integrate link scanning using threat detection services such as Google Safe Browsing or VirusTotal:
 
          - Automatic scanning of URLs to detect phishing, malware, or other malicious content.
