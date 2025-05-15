@@ -107,7 +107,7 @@
 3.  📱 Temporary QR Code Generation for Guest Users -> 
     Guest users can now generate temporary QR codes for any URL, enabling quick and convenient sharing or access without needing to log in. This feature is designed to enhance usability for casual visitors and one-time users by:
 
-         - Allowing QR generation directly from the homepage or extension.
+         - Allowing QR generation directly from the QRify Page.
          - Creating non-persistent codes that are not stored in the user database.
          - Ensuring fast, frictionless access for immediate use cases.
 
