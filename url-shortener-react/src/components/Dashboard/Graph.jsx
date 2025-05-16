@@ -99,7 +99,7 @@ const Graph = ({ graphData }) => {
     },
   };
 
-  return <Line className="border border-black p-3 w-full" data={data} options={options}></Line>;
+  return <Line className="border border-gray-300 rounded-xl shadow-xl p-3 w-full" data={data} options={options}></Line>;
 };
 
 export default Graph;
