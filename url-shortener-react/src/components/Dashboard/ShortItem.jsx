@@ -91,10 +91,10 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
   }, [selectedUrl]);
 
   return (
-    <div className="bg-short-list-background shadow-lg border border-solid border-slate-600 px-6 sm:py-1 py-3 rounded-xl transition-all duration-100">
+    <div className="bg-short-list-background shadow-lg border border-slate-300 px-6 sm:py-1 py-3 rounded-xl hover:shadow-xl transition-all duration-300 ease-in-out transform hover:scale-105">
       <div className="flex sm:flex-row flex-col  sm:justify-between w-full sm:gap-0 gap-5 py-5">
         <div className="flex-1 sm:space-y-1 max-w-full overflow-x-auto overflow-y-hidden ">
-          <div className="text-slate-900 pb-1 sm:pb-0  flex items-center gap-2 ">
+          <div className="text-slate-700 pb-1 sm:pb-0  flex items-center gap-2 ">
             <Link
               target="_"
               className="text-[17px]  font-montserrat font-[600] text-red-400"
@@ -111,7 +111,7 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
             <FaExternalLinkAlt className="text-linkColor" />
           </div>
           <div className="flex items-center gap-1 ">
-            <h3 className=" text-slate-900 font-[400] text-[17px] ">
+            <h3 className=" text-slate-600 font-[400] text-[17px] ">
               {originalUrl}
             </h3>
           </div>
@@ -171,7 +171,7 @@ const ShortItem = ({ originalUrl, shortUrl, clickCount, createdDate }) => {
         <div
           className={`${
             analyticToggle ? "flex" : "hidden"
-          }  max-h-96 sm:mt-0 mt-5 min-h-96 relative  border-t-2 w-[100%] overflow-hidden `}
+          }  max-h-[450px] mt-5 min-h-96 relative  border-t-2 w-[100%] overflow-hidden `}
         >
           {loader ? (
             <div className="min-h-[calc(450px-140px)] flex justify-center items-center w-full">
