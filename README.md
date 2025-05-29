@@ -115,17 +115,17 @@
 
 &nbsp;
 
-4.  🔗 Chrome Extension ->
+4.  🚀 Chrome Extension ->
     We are developing a lightweight Google Chrome extension to integrate the core features of the URL shortener directly into the browser. Planned capabilities include:
 
          - A popup interface for quickly shortening the current tab's URL.
          - One-click copy and open options for shortened links.
 
-    ✅ URL Validity Checking->
-    To improve reliability and user experience, we will implement automatic URL validation before shortening:
+    🔗 Temporary URL Shortening for Guests Users ->
+    We are introducing a temporary URL shortening service tailored for guest users who prefer not to sign up. Key aspects of this feature include:
 
-         - Checks for malformed or unreachable URLs.
-         - HTTP status verification to ensure links are active and responsive.
+         - Instantly shorten URLs without the need for an account or login.
+         - Shortened links will remain active for a limited time, ideal for quick, one-time sharing.
 
     🔒 Malicious Link Detection -> 
     To enhance safety, we will integrate link scanning using threat detection services such as Google Safe Browsing or VirusTotal:
