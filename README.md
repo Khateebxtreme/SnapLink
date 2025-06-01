@@ -134,4 +134,4 @@
          - Warnings or alerts when suspicious links are detected.
          - Optionally block or flag high-risk links before shortening.
 
-    These features are currently under development and will be rolled out in stages. We welcome feedback and contributions from the community as we continue to build a safer and more convenient link management tool. Planned Release Date for an upcoming feature -> <b>Release Date : 30th May, 2025</b>
+    These features are currently under development and will be rolled out in stages. We welcome feedback and contributions from the community as we continue to build a safer and more convenient link management tool.
